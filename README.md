@@ -36,7 +36,7 @@ DB_PASSWORD=
 4. Menjalankan Composer laravel jetstream
 ```
 composer require laravel/jetstream
-php artisan jetstream:install livewire
+php artisan jetstream:install livewire --teams
 npm install && npm run dev
 php artisan vendor:publish --tag=jetstream-views
 ```
