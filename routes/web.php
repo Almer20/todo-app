@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\livewire\home;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', home::class)->name('/');
+
+Route::get('/activiy', function () {
+    return view('activity');
+})->name('activity');
+
+Route::get('/friend', function () {
+    return view('friend');
+})->name('friend');
+
+
 
 Route::middleware([
     'auth:sanctum',

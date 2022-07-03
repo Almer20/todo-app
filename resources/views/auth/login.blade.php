@@ -1,4 +1,5 @@
 <x-guest-layout>
+
     <x-jet-authentication-card>
         <x-slot name="logo">
             <x-jet-authentication-card-logo />
@@ -40,9 +41,17 @@
                 @endif
 
                 <x-jet-button class="ml-4">
+                    <a href="{{ route('/') }}">Back</a>
+                </x-jet-button>
+                <x-jet-button class="ml-4">
                     {{ __('Log in') }}
                 </x-jet-button>
+               
             </div>
+            <button class="btn btn-primary">
+                <a href="{{ route('/') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Back</a>
+            </button>
         </form>
     </x-jet-authentication-card>
+  
 </x-guest-layout>

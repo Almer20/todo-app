@@ -15,6 +15,12 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('friend') }}" :active="request()->routeIs('friend')">
+                        {{ __('Friends') }}
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('activity') }}" :active="request()->routeIs('activity')">
+                        {{ __('Activity') }}
+                    </x-jet-nav-link>
                 </div>
             </div>
 
@@ -75,7 +81,7 @@
                         <x-slot name="trigger">
                             @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <button class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
-                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
+                                    <img class="h-8 w-8 rounded-full object-cover" src="{{ asset('storage/' .Auth::user()->profile_photo_path) }}" alt="{{ Auth::user()->name }}" />
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
