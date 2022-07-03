@@ -62,3 +62,22 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+Instalation
+
+1. Clone Repository
+git clone https://github.com/Almer20/todo-app.git
+cd todo-app
+composer update
+cp .env.example .env
+
+2. Buka .env ubah dengan database 
+DB_PORT=3306
+DB_DATABASE=nama_database
+DB_USERNAME=root
+DB_PASSWORD=
+
+3. 
