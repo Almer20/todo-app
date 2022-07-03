@@ -50,6 +50,7 @@ php artisan migrate --seed
 6. Jalankan laravel
 ```
 php artisan serve
+npm run dev 
 ```
 
 
