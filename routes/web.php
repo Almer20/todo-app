@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\livewire\home;
+use App\Http\livewire\Home;
+use App\Http\livewire\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use App\Http\livewire\home;
 |
 */
 
-Route::get('/', home::class)->name('/');
+Route::get('/', Home::class)->name('/');
 
 Route::get('/activiy', function () {
     return view('activity');
@@ -26,12 +27,18 @@ Route::get('/friend', function () {
 
 
 
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/dashboard', function () {
+//         return view('dashboard');
+//     })->name('dashboard');
+// });
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+])->get('/dashboard', Dashboard::class)->name('dashboard');
